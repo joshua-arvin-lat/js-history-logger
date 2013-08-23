@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Js-history-logger by joshua-arvin-lat</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Js-history-logger</h1>
+        <h2>Store Logs in Local Storage / Cookies for debugging purposes</h2>
+        <a href="https://github.com/joshua-arvin-lat/js-history-logger" class="button"><small>View project on</small>GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a name="js-history-logger" class="anchor" href="#js-history-logger"><span class="octicon octicon-link"></span></a>JS History Logger</h1>
+
+<p>Store Logs in Local Storage or Cookies. Requires jQuery.local-storage.js</p>
+
+<h2>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic Usage</h2>
+
+<div class="highlight"><pre><span class="c1"># clear log history</span>
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span>
+
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">'A'</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mi">45</span> <span class="o">-</span> <span class="nx">A</span>
+
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">'B'</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">13</span> <span class="o">-</span> <span class="nx">B</span>
+
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s">'C'</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">25</span><span class="o">:</span><span class="mi">46</span> <span class="o">-</span> <span class="nx">C</span>
+
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">listAll</span><span class="p">()</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">23</span><span class="o">:</span><span class="mi">45</span> <span class="o">-</span> <span class="nx">A</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">13</span> <span class="o">-</span> <span class="nx">B</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">25</span><span class="o">:</span><span class="mi">46</span> <span class="o">-</span> <span class="nx">C</span>
+
+<span class="c1"># display last 2 logs</span>
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">24</span><span class="o">:</span><span class="mi">13</span> <span class="o">-</span> <span class="nx">B</span>
+<span class="o">&gt;</span> <span class="nx">Fri</span> <span class="nx">Aug</span> <span class="mi">23</span> <span class="mi">2013</span> <span class="mi">15</span><span class="o">:</span><span class="mi">25</span><span class="o">:</span><span class="mi">46</span> <span class="o">-</span> <span class="nx">C</span>
+
+<span class="c1"># turn off logging</span>
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">off</span><span class="p">()</span>
+
+<span class="c1"># turn on logging</span>
+<span class="nx">HistoryLogger</span><span class="p">.</span><span class="nx">on</span><span class="p">()</span>
+</pre></div>
+
+<h2>
+<a name="installation" class="anchor" href="#installation"><span class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight"><pre><span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'js/cross-browser-js-fixes.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'js/jquery.min.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'js/jquery.local-storage.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">'text/javascript'</span> <span class="na">src=</span><span class="s">'js/js-history-logger.js'</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+<h2>
+<a name="acknowledgements" class="anchor" href="#acknowledgements"><span class="octicon octicon-link"></span></a>Acknowledgements</h2>
+
+<p>© 2013, Joshua Arvin Lat. Released under the <a href="LICENSE">MIT License</a>.</p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/joshua-arvin-lat/js-history-logger/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/joshua-arvin-lat/js-history-logger/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/joshua-arvin-lat/js-history-logger"></a> is maintained by <a href="https://github.com/joshua-arvin-lat">joshua-arvin-lat</a>.</p>
+
+          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
