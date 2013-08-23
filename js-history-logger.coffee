@@ -21,7 +21,7 @@ class HistoryLogger
     $.localStorage(@_storageData, temp)
 
   @log = (message) =>
-    return false unless @isOn
+    return false unless @isOn()
 
     now = new Date()
     date = now.toDateString()
@@ -45,6 +45,8 @@ class HistoryLogger
     for dict in temp
       console.log("#{dict['datetime']} - #{dict['message']}")
 
+    temp
+
   @list = (n) =>
     temp = @_data()
     length = temp.length
@@ -55,3 +57,5 @@ class HistoryLogger
 
     for dict in temp
       console.log("#{dict['datetime']} - #{dict['message']}")
+
+    temp

@@ -34,7 +34,7 @@ HistoryLogger = (function() {
 
   HistoryLogger.log = function(message) {
     var date, datetime, json, now, time;
-    if (!HistoryLogger.isOn) {
+    if (!HistoryLogger.isOn()) {
       return false;
     }
     now = new Date();
