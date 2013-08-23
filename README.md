@@ -35,3 +35,18 @@ HistoryLogger.off()
 # turn on logging
 HistoryLogger.on()
 ~~~
+
+Installation
+------------
+
+~~~ html
+<script type='text/javascript' src='js/cross-browser-js-fixes.js'></script>
+<script type='text/javascript' src='js/jquery.min.js'></script>
+<script type='text/javascript' src='js/jquery.local-storage.js'></script>
+<script type='text/javascript' src='js/js-history-logger.js'></script>
+~~~
+
+Acknowledgements
+----------------
+
+© 2013, Joshua Arvin Lat. Released under the [MIT License](LICENSE).
